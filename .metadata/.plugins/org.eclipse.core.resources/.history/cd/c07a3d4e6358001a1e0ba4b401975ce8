@@ -1,0 +1,57 @@
+package com.aciworldwide.entities;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+
+@Table(name = "account")
+public class Account {
+	@Id
+	@GeneratedValue
+	@Column(name = "accno")
+	private Long accno;
+	@Column(name = "ownerName")
+	private String ownerName;
+	@Column(name = "balance")
+	private double balance;
+
+	public Account(Long accno, String ownerName, double balance) {
+		super();
+		this.accno = accno;
+		this.ownerName = ownerName;
+		this.balance = balance;
+	}
+
+	public Account() {
+		super();
+	}
+
+	public Long getAccNo() {
+		return accno;
+	}
+
+	public void setAccNo(Long accno) {
+		this.accno = accno;
+	}
+
+	public String getownerName() {
+		return ownerName;
+	}
+
+	public void setownerNamee(String ownerName) {
+		this.ownerName = ownerName;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+}

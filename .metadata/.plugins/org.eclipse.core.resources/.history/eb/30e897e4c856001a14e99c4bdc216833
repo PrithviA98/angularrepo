@@ -1,0 +1,48 @@
+package com.aciworldwide;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Account 
+{
+	private Long accNo;
+	private String accName;
+	private double  balance;
+	
+	public Account(Long accNo, String accName, double balance) {
+		super();
+		this.accNo = accNo;
+		this.accName = accName;
+		this.balance = balance;
+	}
+	public Account() {
+		super();
+	}
+	
+
+	public Long getAccNo() {
+		return accNo;
+	}
+	public void setAccNo(Long accNo) {
+		this.accNo = accNo;
+	}
+	public String getAccName() {
+		return accName;
+	}
+	public void setAccName(String accName) {
+		this.accName = accName;
+	}
+	public double getBalance() {
+		return balance;
+	}
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+	
+	public String toString()
+	{
+		return ("Account details:\nAcc no."+accNo+"\nAcc Name"+accName+"\nAcc balance"+balance);
+		
+	}
+	
+}

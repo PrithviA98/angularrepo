@@ -1,0 +1,9 @@
+spring.application.name=account-web-service
+server.port=8182
+
+spring.jpa.show-sql=true
+
+
+eureka.client.service-url.default-zone=http://localhost:8761/eureka
+spring.datasource.data-username=root
+spring.datasource.data-password=root123

@@ -1,0 +1,42 @@
+package com.aciworlwide.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.aciworldwide.entities.Account;
+import com.aciworldwide.repositories.AccountRepository;
+
+@Service
+public class AccountService {
+
+	@Autowired
+	private AccountRepository accountRepository;
+	
+	@GetMapping("/accounts")
+	public void getAccounts()
+	{
+		accountRepository.findAll();
+	}
+	
+	@GetMapping("/accounts/owner/{name}")
+	public List<Account> getAccountsByOwnerName(String name)
+	{
+		return accountRepository.findByOwnerName(name);
+		
+	}
+	
+	@GetMapping("/accounts/balance/{bal}")
+	public void getAccountsByBalance(double bal)
+	{
+		accountRepository.findByBalance(bal);
+	}
+	
+	@GetMapping("/accounts/count")
+	public void getNoOfAccounts()
+	{
+		accountRepository.count();
+	}
+}

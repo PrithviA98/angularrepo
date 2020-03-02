@@ -1,0 +1,50 @@
+package com.aciworldwide.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
+
+@Entity
+public class Account {
+	@Id
+	private Long accNo;
+	private String accName;
+	private double balance;
+
+	public Account(Long accNo, String accName, double balance) {
+		super();
+		this.accNo = accNo;
+		this.accName = accName;
+		this.balance = balance;
+	}
+
+	public Account() {
+		super();
+	}
+
+	public Long getAccNo() {
+		return accNo;
+	}
+
+	public void setAccNo(Long accNo) {
+		this.accNo = accNo;
+	}
+
+	public String getAccName() {
+		return accName;
+	}
+
+	public void setAccName(String accName) {
+		this.accName = accName;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+}

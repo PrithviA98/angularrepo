@@ -1,0 +1,51 @@
+package com.aciworldwide.acisportstoreapi.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.aciworldwide.acisportstoreapi.model.Product;
+import com.aciworldwide.acisportstoreapi.services.ProductService;
+
+@CrossOrigin(origins = "http://localhost:4200")
+@RestController
+@RequestMapping("/api/products")
+public class ProductController 
+{
+	@Autowired
+	private ProductService productService;
+	
+	@GetMapping("/all")
+	public List<Product> getProducts()
+	{
+		return productService.getProducts();
+	}
+	
+	@PostMapping("/insert")
+	public Product insert(@RequestBody Product product)
+	{
+		return productService.insert(product);
+	}
+	
+	@PutMapping("/update/{id}")
+	public void update( Long id) 
+	{
+		productService.update(id);
+	}
+	
+	@DeleteMapping("/delete/{id}")
+	public void delete(@RequestBody Long id)
+	{
+		productService.delete(id);
+	}
+	
+	
+}

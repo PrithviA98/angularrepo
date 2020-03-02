@@ -1,0 +1,40 @@
+package com.aciworlwide.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.aciworldwide.entities.Account;
+import com.aciworldwide.repositories.AccountRepository;
+
+@RestController
+public class AccountService {
+
+	@Autowired
+	private AccountRepository accountRepository;
+
+	@GetMapping("/accounts")
+	public List<Account> getAccounts() {
+		return accountRepository.findAll();
+	}
+
+	@GetMapping("/accounts/owner/{name}")
+	public Account getAccountsByOwnerName(@PathVariable String name) {
+		return accountRepository.findByOwnerName(name);
+
+	}
+
+	@GetMapping("/accounts/balance/{bal}")
+	public Account getAccountsByBalance(@PathVariable double bal) {
+		return accountRepository.findByBalance(bal);
+	}
+
+	@GetMapping("/accounts/count")
+	public int getNoOfAccounts() {
+		return (int) accountRepository.count();
+	}
+}

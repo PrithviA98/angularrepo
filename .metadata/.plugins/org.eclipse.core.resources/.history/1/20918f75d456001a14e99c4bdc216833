@@ -1,0 +1,10 @@
+package com.aciworldwide.acisportstoreapi.controllers;
+
+import com.aciworldwide.acisportstoreapi.services.OrderService;
+
+public class OrderController {
+
+	private OrderService orderService;
+	
+	
+}

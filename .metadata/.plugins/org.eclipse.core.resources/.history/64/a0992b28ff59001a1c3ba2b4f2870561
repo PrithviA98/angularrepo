@@ -1,0 +1,5 @@
+package com.kudla.controllers;
+
+public class LoginController {
+
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="&#x0A;spring.datasource.url=jdbc:mysql://localhost:3306/aciworlwidedb"/>
+		<list key="findhistory">
+			<item value="&#x0A;spring.datasource.url=jdbc:mysql://localhost:3306/aciworlwidedb"/>
+		</list>
+	</section>
+</section>
